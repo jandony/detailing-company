@@ -47,10 +47,21 @@ npm run wpstart
     },
 ```
 
-2. cd to react-src
+2. cd to react-src/src
 
-3. Type in this command:
+3. Duplicate template repo into your new GitHUb repository
 
 ```
-git clone [github repo url]/src
+git clone --bare https://github.com/jandony/react-theme.git
+cd react-theme.git
+git push --mirror [new HTTPS repo link]
+cd ..
+rm -rf react-theme.git
+```
+
+4. Fork new repo to src file
+
+```
+git clone https://github.com/jandony/second-project.git .
+``
 ```
