@@ -59,9 +59,10 @@ cd ..
 rm -rf react-theme.git
 ```
 
-4. Fork new repo to src file
+4. Fork new repo to src folder
 
 ```
 git clone https://github.com/jandony/second-project.git .
-``
 ```
+
+5. Make first commit to new repo from /src
