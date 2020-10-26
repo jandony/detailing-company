@@ -47,14 +47,10 @@ npm run wpstart
     },
 ```
 
-2. In terminal, cd into react-rc/src and delete everything inside
+2. cd to react-src
+
+3. Type in this command:
 
 ```
-rm -r *
-```
-
-3. Inside the src folder, type in this command:
-
-```
-git clone [github repo url]
+git clone [github repo url]/src
 ```
