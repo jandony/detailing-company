@@ -1,19 +1,39 @@
-import React from 'react';
+import React from "react";
 
 export default function Header(props) {
-    return (
-        <React.Fragment>
-            <div className="header">
-                {/* <!-- Banner --> */}
-                <section id="banner">
-                    <i className="icon far fa-gem"></i>
-                    <h2>React Theme</h2>
-                    <p>Page Title Here</p>
-                    <ul className="actions">
-                        <li><a href="https://www.google.com" className="button big special">Learn More</a></li>
-                    </ul>
-                </section>
+  return (
+    <header id="header" className="alt">
+      <h1>
+        <a href="index.html">Maxwell Detailing</a>
+      </h1>
+      <nav id="nav">
+        <ul>
+          <li className="special">
+            <a href="#menu" className="menuToggle">
+              <span>Menu</span>
+            </a>
+            <div id="menu">
+              <ul>
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+                <li>
+                  <a href="generic.html">Generic</a>
+                </li>
+                <li>
+                  <a href="elements.html">Elements</a>
+                </li>
+                <li>
+                  <a href="index.html">Sign Up</a>
+                </li>
+                <li>
+                  <a href="index.html">Log In</a>
+                </li>
+              </ul>
             </div>
-        </React.Fragment>
-    );
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 }

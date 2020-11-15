@@ -1,7 +1,7 @@
 import React from "react";
 
 // Utilities
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Main Components
 
@@ -12,18 +12,22 @@ import Search from "./components/templates/Search";
 import NotFound from "./components/templates/NotFound";
 
 function App() {
-    return (
-        <div className="App">
-            <Router>
-                <Switch>
-                    <Route exact path='/react-theme' component={Home} />
-                    <Route exact path='/react-theme/:slug' component={Single} />
-                    <Route exact path='/react-theme/search/:term' component={Search} />
-                    <Route component={NotFound} />
-                </Switch>
-            </Router>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/DetailingCompany/" component={Home} />
+          <Route exact path="/DetailingCompany/:slug" component={Single} />
+          <Route
+            exact
+            path="/DetailingCompany/search/:term"
+            component={Search}
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
