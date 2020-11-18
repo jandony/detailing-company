@@ -36,6 +36,9 @@ export default function Footer(props) {
           <li>
             Design: <a href="http://html5up.net">HTML5 UP</a>
           </li>
+          <li>
+            <a href="/DetailingCompany/wp-admin">Login</a>
+          </li>
         </ul>
       </footer>
     </React.Fragment>

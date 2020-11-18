@@ -12,13 +12,9 @@ export default function Hero(props) {
       <div className="inner">
         <h2>Maxwell Detailing</h2>
         <p>Something cool about detailing or the services.</p>
-        <ul className="actions special">
-          <li>
-            <a href="index.html" className="button primary">
-              Book Now
-            </a>
-          </li>
-        </ul>
+        <a href="www.google.com">
+          <button className="primary-outline">Book Now</button>
+        </a>
       </div>
       <a href="#one" className="more scrolly">
         Learn More

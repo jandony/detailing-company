@@ -4,7 +4,7 @@ export default function Navbar(props) {
   function openNav() {
     document.getElementById("mySidenav").style.width = "100%";
     document.getElementById("wrapper-lightbox").style.backgroundColor =
-      "rgba(0, 0, 0, 0.75)";
+      "rgba(0, 0, 0, 0.85)";
   }
 
   return (

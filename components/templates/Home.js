@@ -5,11 +5,12 @@ import Header from "../partials/Header";
 import Footer from "../partials/Footer";
 
 // Template Components
-import Hero from "../home/Hero";
-import TableOfContents from "../home/TOC";
-import Gallery from "../home/Gallery";
-import Services from "../home/Services";
-import CTA from "../home/CTA";
+import Hero from "../sections/Hero";
+// import TableOfContents from "../sections/TOC";
+import About from "../sections/About";
+import Gallery from "../sections/Gallery";
+import Services from "../sections/Services";
+import CTA from "../sections/CTA";
 
 export default function Home(props) {
   return (
@@ -19,7 +20,8 @@ export default function Home(props) {
       <div className="Home">
         <div id="page-wrapper">
           <Hero />
-          <TableOfContents />
+          <About />
+          {/* <TableOfContents /> */}
           <Gallery />
           <Services />
           <CTA />

@@ -1195,6 +1195,22 @@ button,
     }
   }
 
+  &.primary-outline {
+    background-color: $body;
+    box-shadow: none !important;
+    color: _palette(accent6, fg-bold) !important;
+    border: 2px solid $primaryColor;
+
+    &:hover {
+      background-color: lighten(_palette(accent6, bg), 5) !important;
+      border: 2px solid $primaryColor;
+    }
+
+    &:active {
+      background-color: darken(_palette(accent6, bg), 5) !important;
+    }
+  }
+
   &.disabled,
   &:disabled {
     @include vendor("pointer-events", "none");
@@ -1845,10 +1861,10 @@ body.is-menu-visible {
   @include vendor("justify-content", "center");
   cursor: default;
   height: 100vh;
-  min-height: 35em;
   overflow: hidden;
   position: relative;
   text-align: center;
+
   @include breakpoint("<=medium") {
     height: 100vh;
   }
@@ -1991,7 +2007,6 @@ body.is-menu-visible {
 
   @include breakpoint("<=small") {
     @include padding(7em, 3em);
-    height: auto;
     min-height: 0;
 
     h2 {
