@@ -44,7 +44,7 @@ export default function About(props) {
 
                 <div className="about-row">
                   <div className="about-icon">
-                    <i class="fas fa-user-friends" />
+                    <i className="fas fa-user-friends" />
                   </div>
                   <div className="about-text">
                     <p>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Page(props) {
   // Destructured Prop Variables
@@ -6,7 +6,11 @@ export default function Page(props) {
 
   // useState Variables & Functions
   //   const [featuredImage, setFeaturedImage] = useState(false);
-//   const [pageEmbedData, setPageEmbedData] = useState();
+  //   const [pageEmbedData, setPageEmbedData] = useState();
+
+  const [section1Data, setSection1Data] = useState();
+  const [section2Data, setSection2Data] = useState();
+  const [showSection2, setShowSection2] = useState();
 
   useEffect(() => {
     pageData.map((page) => {
@@ -17,9 +21,22 @@ export default function Page(props) {
         )
           .then((response) => response.json())
           .then((responseJSON) => {
-            // setPageEmbedData(responseJSON);
-            // console.log(responseJSON);
+            console.log(responseJSON.acf.section_1);
 
+            // Assign & Display Section 1 Text Area in DOM
+            setSection1Data(responseJSON.acf.section_1);
+            document.getElementById("section1TextArea").innerHTML =
+              responseJSON.acf.section_1.text_area_1;
+
+            // Show Section 2?
+            setShowSection2(responseJSON.acf.show_section_2);
+
+            // Assing & Display Section 2 Text Area in DOM
+            setSection2Data(responseJSON.acf.section_2);
+            document.getElementById("section2TextArea").innerHTML =
+              responseJSON.acf.section_2.text_area_1;
+
+            // setPageEmbedData(responseJSON);
             // If page has a Featured Image, show it... if not, do nothing.
             // if (responseJSON._embedded["wp:featuredmedia"]["0"].source_url) {
             //   setFeaturedImage(true);
@@ -37,7 +54,7 @@ export default function Page(props) {
       {pageData.map((post, index) => {
         return (
           post.type === "page" && (
-            <div className="Page">
+            <div className="Page" key={post.id}>
               <div className="wrapper">
                 <div className="pageHero">
                   <div className="pageHeroImg" />
@@ -66,28 +83,22 @@ export default function Page(props) {
                         height="auto"
                         />
                     )} */}
-                    <h2>Section Title</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Cras sed felis eget velit. Semper auctor neque
-                      vitae tempus quam pellentesque. Non odio euismod lacinia
-                      at quis. At volutpat diam ut venenatis. Egestas sed tempus
-                      urna et pharetra pharetra massa. Tristique magna sit amet
-                      purus. Varius morbi enim nunc faucibus.
-                    </p>
 
-                    <p>
-                      Turpis nunc eget lorem dolor sed viverra ipsum. Bibendum
-                      neque egestas congue quisque. Condimentum mattis
-                      pellentesque id nibh tortor id. Pharetra diam sit amet
-                      nisl suscipit adipiscing bibendum est ultricies. Laoreet
-                      non curabitur gravida arcu. Nisl purus in mollis nunc sed
-                      id semper risus in. Nulla aliquet porttitor lacus luctus
-                      accumsan. Urna nunc id cursus metus. Interdum varius sit
-                      amet mattis vulputate enim. Curabitur vitae nunc sed velit
-                      dignissim sodales ut.
-                    </p>
+                    {/* Section 1 */}
+                    {section1Data && (
+                      <React.Fragment>
+                        <h2>{section1Data.title_1}</h2>
+                        <div id="section1TextArea" />
+                      </React.Fragment>
+                    )}
+
+                    {/* Section 2 */}
+                    {section2Data && showSection2 && (
+                      <React.Fragment>
+                        <h2>{section2Data.title_1}</h2>
+                        <div id="section2TextArea" />
+                      </React.Fragment>
+                    )}
                     <hr />
                   </div>
                 </div>

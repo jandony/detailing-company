@@ -36,7 +36,7 @@ export default function Post(props) {
       {postData.map((post, index) => {
         return (
           post.type === "post" && (
-            <div id="Post">
+            <div className="Post" key={post.id}>
               <div className="wrapper">
                 <div className="pageHero">
                   <div className="postHeroImg" />
